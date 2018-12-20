@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AAC0282B21CBA2EA002B3662 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0282A21CBA2EA002B3662 /* main.swift */; };
+		AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0283221CBA3D8002B3662 /* CommandLine.swift */; };
+		AAC0283521CBB007002B3662 /* ScelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0283421CBB007002B3662 /* ScelReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AAB2A43321CC1D9C009ADEE7 /* word_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_s2t.txt; sourceTree = "<group>"; };
+		AAB2A43421CC1D9C009ADEE7 /* phrase_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrase_s2t.txt; sourceTree = "<group>"; };
 		AAC0282721CBA2EA002B3662 /* scel2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scel2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0282A21CBA2EA002B3662 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AAC0283221CBA3D8002B3662 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		AAC0283421CBB007002B3662 /* ScelReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScelReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAB2A43221CC1D62009ADEE7 /* tonwen */ = {
+			isa = PBXGroup;
+			children = (
+				AAB2A43421CC1D9C009ADEE7 /* phrase_s2t.txt */,
+				AAB2A43321CC1D9C009ADEE7 /* word_s2t.txt */,
+			);
+			path = tonwen;
+			sourceTree = "<group>";
+		};
 		AAC0281E21CBA2EA002B3662 = {
 			isa = PBXGroup;
 			children = (
@@ -57,7 +72,10 @@
 		AAC0282921CBA2EA002B3662 /* scel2csv */ = {
 			isa = PBXGroup;
 			children = (
+				AAB2A43221CC1D62009ADEE7 /* tonwen */,
 				AAC0282A21CBA2EA002B3662 /* main.swift */,
+				AAC0283221CBA3D8002B3662 /* CommandLine.swift */,
+				AAC0283421CBB007002B3662 /* ScelReader.swift */,
 			);
 			path = scel2csv;
 			sourceTree = "<group>";
@@ -120,6 +138,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC0282B21CBA2EA002B3662 /* main.swift in Sources */,
+				AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */,
+				AAC0283521CBB007002B3662 /* ScelReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
