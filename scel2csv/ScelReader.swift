@@ -72,35 +72,6 @@ final public class SogouDictionaryReader {
     
     // MARK: private
     
-    fileprivate func test() {
-        guard let url = self.path, let stream = InputStream(url: url) else {
-            return
-        }
-        
-        stream.open()
-        defer {
-            stream.close()
-        }
-        
-        var read = 0
-        var buffer: [UInt8] = [UInt8](repeating: 0, count: 2)
-        
-        while true {
-            
-            let length = stream.read(&buffer, maxLength: buffer.count)
-            let text = self.byteToString(bytes: buffer) ?? ""
-            
-            print(read, String(read, radix: 16, uppercase: false), buffer, text)
-            
-            read += length
-            
-            if length < buffer.count {
-                break
-            }
-            
-        }
-    }
-    
     fileprivate func validHeader(_ stream: InputStream) -> Bool {
         let blockLength = 0x130
         var buffer: [UInt8] = [UInt8](repeating: 0, count: blockLength)
@@ -141,7 +112,7 @@ final public class SogouDictionaryReader {
             }
         }
         
-        self.name = text
+        self.name = text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     fileprivate func getCategory(_ stream: InputStream) {
@@ -156,7 +127,7 @@ final public class SogouDictionaryReader {
             }
         }
         
-        self.category = text
+        self.category = text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     fileprivate func getDescription(_ stream: InputStream) {
@@ -171,7 +142,7 @@ final public class SogouDictionaryReader {
             }
         }
         
-        self.description = text
+        self.description = text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     fileprivate func getExample(_ stream: InputStream) {

@@ -10,13 +10,10 @@ import Foundation
 
 let cli = CommandLineKit()
 
-//guard let srcPath = cli.args[.source], let destPath = cli.args[.output] else {
-//    cli.printUsage()
-//    exit(EX_USAGE)
-//}
-
-let srcPath = "/Users/Ethan/Web/www/dummy/日常用词.scel"
-let destPath = "/Users/Ethan/Web/www/dummy/日常用词.csv"
+guard let srcPath = cli.args[.source], let destPath = cli.args[.output] else {
+    cli.printUsage()
+    exit(EX_USAGE)
+}
 
 let reader = SogouDictionaryReader(URL(fileURLWithPath: srcPath))
 if reader.load() == false {
@@ -24,10 +21,12 @@ if reader.load() == false {
     exit(EXIT_FAILURE)
 }
 
-print(reader.name)
-print(reader.category)
-print(reader.description)
-print(reader.example)
+print("SCEL file: \((srcPath as NSString).lastPathComponent)")
+print("CSV file: \((destPath as NSString).lastPathComponent)")
+print("Name: \(reader.name)")
+print("Category: \(reader.category)")
+print("Description: \(reader.description)")
+print("Example:\nå\(reader.example)")
 
 try? FileManager.default.removeItem(atPath: destPath)
 FileManager.default.createFile(atPath: destPath, contents: nil, attributes: nil)
@@ -36,6 +35,7 @@ do {
     let writter = try FileHandle(forWritingTo: URL(fileURLWithPath: destPath))
     writter.seekToEndOfFile()
     
+    print("Parsing...")
     for (var pinyin, phrases) in reader.getLexicon() {
         pinyin = pinyin.trimmingCharacters(in: .whitespacesAndNewlines)
         
@@ -55,6 +55,18 @@ do {
     }
     
     writter.closeFile()
+    
+
+    if cli.args[.transform] != "" {
+        let tonwen = Tonwen(URL(fileURLWithPath: destPath))
+        print("Transform phrases...")
+        tonwen.convertPhrases()
+        print("Transform words...")
+        tonwen.convertWords()
+        tonwen.cleanup()
+    }
+    
+    print("done")
     exit(EXIT_SUCCESS)
 }
 catch {

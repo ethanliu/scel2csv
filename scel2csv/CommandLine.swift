@@ -11,6 +11,7 @@ import Foundation
 enum CommandLineOption: String {
     case source = "s"
     case output = "o"
+    case transform = "t"
     case help = "h"
     case unknown
     
@@ -18,6 +19,7 @@ enum CommandLineOption: String {
         switch value {
         case "-s": self = .source
         case "-o": self = .output
+        case "-t": self = .transform
         case "-h": self = .help
         default: self = .unknown
         }
@@ -35,7 +37,8 @@ class CommandLineKit {
     func printUsage() {
         let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
         print("usage:")
-        print("\(executableName) -s source_path -o output_path")
+        print("\(executableName) -s scel_path -o output_csv_path")
+        print("\(executableName) -t to transform from Simplified Chinese to Traditional Chinese")
         print("\(executableName) -h to show usage information")
     }
     
@@ -45,17 +48,27 @@ class CommandLineKit {
         
         var index = 1
         var option: CommandLineOption
-        
+
+        self.args[.transform] = "1"
+
         while index < count {
             option = CommandLineOption(value: args[index])
 
-            if option != .unknown, let value = args[index + 1] as String? {
+            if option == .transform {
+                self.args[.transform] = "1"
+            }
+            else if option != .unknown, let value = args[index + 1] as String? {
                 self.args[option] = value
                 index += 2
+                continue
             }
-            else {
-                index += 1
-            }
+
+            index += 1
+        }
+        
+        
+        if self.args[.output] == nil, self.args[.source] != nil {
+            self.args[.output] = self.args[.source]?.replacingOccurrences(of: ".scel", with: ".csv")
         }
         
     }

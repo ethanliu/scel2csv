@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA68F83421CCC1960061BEAB /* phrase_s2t.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */; };
+		AA68F83521CCC1960061BEAB /* word_s2t.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAB2A43821CC2613009ADEE7 /* word_s2t.txt */; };
+		AAB2A43621CC1E0B009ADEE7 /* Tonwen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */; };
 		AAC0282B21CBA2EA002B3662 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0282A21CBA2EA002B3662 /* main.swift */; };
 		AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0283221CBA3D8002B3662 /* CommandLine.swift */; };
 		AAC0283521CBB007002B3662 /* ScelReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0283421CBB007002B3662 /* ScelReader.swift */; };
@@ -15,18 +18,21 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		AAC0282521CBA2EA002B3662 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 12;
+			dstPath = /tmp;
 			dstSubfolderSpec = 0;
 			files = (
+				AA68F83421CCC1960061BEAB /* phrase_s2t.txt in CopyFiles */,
+				AA68F83521CCC1960061BEAB /* word_s2t.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AAB2A43321CC1D9C009ADEE7 /* word_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_s2t.txt; sourceTree = "<group>"; };
-		AAB2A43421CC1D9C009ADEE7 /* phrase_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrase_s2t.txt; sourceTree = "<group>"; };
+		AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tonwen.swift; sourceTree = "<group>"; };
+		AAB2A43821CC2613009ADEE7 /* word_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_s2t.txt; sourceTree = "<group>"; };
+		AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrase_s2t.txt; sourceTree = "<group>"; };
 		AAC0282721CBA2EA002B3662 /* scel2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scel2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0282A21CBA2EA002B3662 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AAC0283221CBA3D8002B3662 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
@@ -44,11 +50,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AAB2A43221CC1D62009ADEE7 /* tonwen */ = {
+		AA68F83621CCC1A10061BEAB /* tonwen */ = {
 			isa = PBXGroup;
 			children = (
-				AAB2A43421CC1D9C009ADEE7 /* phrase_s2t.txt */,
-				AAB2A43321CC1D9C009ADEE7 /* word_s2t.txt */,
+				AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */,
+				AAB2A43821CC2613009ADEE7 /* word_s2t.txt */,
 			);
 			path = tonwen;
 			sourceTree = "<group>";
@@ -72,10 +78,11 @@
 		AAC0282921CBA2EA002B3662 /* scel2csv */ = {
 			isa = PBXGroup;
 			children = (
-				AAB2A43221CC1D62009ADEE7 /* tonwen */,
+				AA68F83621CCC1A10061BEAB /* tonwen */,
 				AAC0282A21CBA2EA002B3662 /* main.swift */,
 				AAC0283221CBA3D8002B3662 /* CommandLine.swift */,
 				AAC0283421CBB007002B3662 /* ScelReader.swift */,
+				AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */,
 			);
 			path = scel2csv;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			files = (
 				AAC0282B21CBA2EA002B3662 /* main.swift in Sources */,
 				AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */,
+				AAB2A43621CC1E0B009ADEE7 /* Tonwen.swift in Sources */,
 				AAC0283521CBB007002B3662 /* ScelReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
