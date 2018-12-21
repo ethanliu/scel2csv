@@ -30,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA68F83721CCD8B20061BEAB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tonwen.swift; sourceTree = "<group>"; };
 		AAB2A43821CC2613009ADEE7 /* word_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_s2t.txt; sourceTree = "<group>"; };
 		AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrase_s2t.txt; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		AAC0281E21CBA2EA002B3662 = {
 			isa = PBXGroup;
 			children = (
+				AA68F83721CCD8B20061BEAB /* README.md */,
 				AAC0282921CBA2EA002B3662 /* scel2csv */,
 				AAC0282821CBA2EA002B3662 /* Products */,
 			);
