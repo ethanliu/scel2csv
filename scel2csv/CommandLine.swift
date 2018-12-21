@@ -9,18 +9,20 @@
 import Foundation
 
 enum CommandLineOption: String {
+    case help = "h"
     case source = "s"
     case output = "o"
     case transform = "t"
-    case help = "h"
+    case weight = "w"
     case unknown
     
     init(value: String) {
         switch value {
+        case "-h": self = .help
         case "-s": self = .source
         case "-o": self = .output
         case "-t": self = .transform
-        case "-h": self = .help
+        case "-w": self = .weight
         default: self = .unknown
         }
     }
@@ -31,18 +33,22 @@ class CommandLineKit {
     public var args: [CommandLineOption: String] = [:]
     
     init() {
+        self.args[.transform] = ""
+        self.args[.weight] = "0"
+
         self.getOptions()
     }
     
     func printUsage() {
         let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
         print("\(executableName) - version 1.0")
-        print("Convert Sogou SCEL dictionary to CSV with column lexicon, weight and pinyin")
-        print("\nUsage:\n\(executableName) -s scel_path [-o output_csv_path] [-t]")
+        print("Convert Sogou SCEL dictionary to CSV with lexicon, weight and pinyin columns.")
+        print("\nUsage:\n\(executableName) -s scel_path [-o output_csv_path] [-w 1234] [-t]")
         print("\nOptions:")
         print("-h to show usage information")
         print("-s scel_path")
         print("-o output_csv_path")
+        print("-w lexicon weight")
         print("-t to transform from Simplified Chinese to Traditional Chinese")
     }
     
@@ -53,12 +59,13 @@ class CommandLineKit {
         var index = 1
         var option: CommandLineOption
 
-        self.args[.transform] = ""
-
         while index < count {
             option = CommandLineOption(value: args[index])
 
-            if option == .transform {
+            if option == .help {
+                self.args[.help] = "1"
+            }
+            else if option == .transform {
                 self.args[.transform] = "1"
             }
             else if option != .unknown, let value = args[index + 1] as String? {
@@ -70,7 +77,10 @@ class CommandLineKit {
             index += 1
         }
         
-        
+        if self.args[.weight]?.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil {
+            self.args[.weight] = "0"
+        }
+
         if self.args[.output] == nil, self.args[.source] != nil {
             self.args[.output] = self.args[.source]?.replacingOccurrences(of: ".scel", with: ".csv")
         }

@@ -10,7 +10,7 @@ import Foundation
 
 let cli = CommandLineKit()
 
-guard let srcPath = cli.args[.source], let destPath = cli.args[.output] else {
+guard cli.args[.help] == nil, let srcPath = cli.args[.source], let destPath = cli.args[.output], let weight = cli.args[.weight] else {
     cli.printUsage()
     exit(EX_USAGE)
 }
@@ -49,7 +49,7 @@ do {
                 continue
             }
             
-            let data = Data("\(phrase)\t0\t\(pinyin)\n".utf8)
+            let data = Data("\(phrase)\t\(weight)\t\(pinyin)\n".utf8)
             writter.write(data)
         }
     }
