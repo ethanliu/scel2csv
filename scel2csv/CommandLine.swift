@@ -33,7 +33,7 @@ class CommandLineKit {
     public var args: [CommandLineOption: String] = [:]
     
     init() {
-        self.args[.transform] = ""
+        self.args[.transform] = nil
         self.args[.weight] = "0"
 
         self.getOptions()

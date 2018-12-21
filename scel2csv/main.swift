@@ -57,7 +57,7 @@ do {
     writter.closeFile()
     
 
-    if cli.args[.transform] != "" {
+    if cli.args[.transform] != nil {
         let tonwen = Tonwen(URL(fileURLWithPath: destPath))
         print("Transform phrases...")
         tonwen.convertPhrases()
