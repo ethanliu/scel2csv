@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA68F83421CCC1960061BEAB /* phrase_s2t.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */; };
-		AA68F83521CCC1960061BEAB /* word_s2t.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAB2A43821CC2613009ADEE7 /* word_s2t.txt */; };
+		AA68F83B21CCE13D0061BEAB /* phrase_s2t.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68F83921CCE13D0061BEAB /* phrase_s2t.swift */; };
+		AA68F83C21CCE13D0061BEAB /* word_s2t.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68F83A21CCE13D0061BEAB /* word_s2t.swift */; };
 		AAB2A43621CC1E0B009ADEE7 /* Tonwen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */; };
 		AAC0282B21CBA2EA002B3662 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0282A21CBA2EA002B3662 /* main.swift */; };
 		AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC0283221CBA3D8002B3662 /* CommandLine.swift */; };
@@ -19,11 +19,9 @@
 		AAC0282521CBA2EA002B3662 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
-			dstPath = /tmp;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
-				AA68F83421CCC1960061BEAB /* phrase_s2t.txt in CopyFiles */,
-				AA68F83521CCC1960061BEAB /* word_s2t.txt in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,9 +29,9 @@
 
 /* Begin PBXFileReference section */
 		AA68F83721CCD8B20061BEAB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AA68F83921CCE13D0061BEAB /* phrase_s2t.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = phrase_s2t.swift; sourceTree = "<group>"; };
+		AA68F83A21CCE13D0061BEAB /* word_s2t.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = word_s2t.swift; sourceTree = "<group>"; };
 		AAB2A43521CC1E0B009ADEE7 /* Tonwen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tonwen.swift; sourceTree = "<group>"; };
-		AAB2A43821CC2613009ADEE7 /* word_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word_s2t.txt; sourceTree = "<group>"; };
-		AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrase_s2t.txt; sourceTree = "<group>"; };
 		AAC0282721CBA2EA002B3662 /* scel2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scel2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC0282A21CBA2EA002B3662 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AAC0283221CBA3D8002B3662 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
@@ -51,13 +49,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA68F83621CCC1A10061BEAB /* tonwen */ = {
+		AA68F83821CCE13D0061BEAB /* dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				AAB2A43921CC2613009ADEE7 /* phrase_s2t.txt */,
-				AAB2A43821CC2613009ADEE7 /* word_s2t.txt */,
+				AA68F83921CCE13D0061BEAB /* phrase_s2t.swift */,
+				AA68F83A21CCE13D0061BEAB /* word_s2t.swift */,
 			);
-			path = tonwen;
+			path = dictionary;
 			sourceTree = "<group>";
 		};
 		AAC0281E21CBA2EA002B3662 = {
@@ -80,7 +78,7 @@
 		AAC0282921CBA2EA002B3662 /* scel2csv */ = {
 			isa = PBXGroup;
 			children = (
-				AA68F83621CCC1A10061BEAB /* tonwen */,
+				AA68F83821CCE13D0061BEAB /* dictionary */,
 				AAC0282A21CBA2EA002B3662 /* main.swift */,
 				AAC0283221CBA3D8002B3662 /* CommandLine.swift */,
 				AAC0283421CBB007002B3662 /* ScelReader.swift */,
@@ -147,9 +145,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC0282B21CBA2EA002B3662 /* main.swift in Sources */,
+				AA68F83B21CCE13D0061BEAB /* phrase_s2t.swift in Sources */,
 				AAC0283321CBA3D8002B3662 /* CommandLine.swift in Sources */,
 				AAB2A43621CC1E0B009ADEE7 /* Tonwen.swift in Sources */,
 				AAC0283521CBB007002B3662 /* ScelReader.swift in Sources */,
+				AA68F83C21CCE13D0061BEAB /* word_s2t.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

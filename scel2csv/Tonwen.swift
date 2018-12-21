@@ -8,24 +8,28 @@
 
 import Foundation
 
+// Command Line Tools do not use bundles, they are just a raw executable file and are
+// not compatible with the copy files build phase or the NSBundle class.
+
+// memory usage and performance is not a concern in current purpose
+
 final public class Tonwen {
     var fileURL: URL
     var phrases: [String: String] = [:]
     var words: [String: String] = [:]
     
-    
     init(_ fileURL: URL) {
         self.fileURL = fileURL
-        self.load("word_s2t", toWords: true)
-        self.load("phrase_s2t", toWords: false)
+//        self.load("word_s2t", toWords: true)
+//        self.load("phrase_s2t", toWords: false)
+        
+        self.words = kWords
+        self.phrases = kPhrases
     }
     
     fileprivate func load(_ filename: String, toWords: Bool) {
-//        Command Line Tools do not use bundles, they are just a raw executable file and are not compatible with the copy files build phase or the NSBundle class.
         let path = URL(fileURLWithPath: "/tmp/\(filename).txt")
         
-        // let's waste some memory
-
         do {
             let data = try String(contentsOf: path).split(separator: "\r\n")
             for line in data {
