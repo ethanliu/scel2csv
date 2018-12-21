@@ -36,10 +36,14 @@ class CommandLineKit {
     
     func printUsage() {
         let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
-        print("usage:")
-        print("\(executableName) -s scel_path -o output_csv_path")
-        print("\(executableName) -t to transform from Simplified Chinese to Traditional Chinese")
-        print("\(executableName) -h to show usage information")
+        print("\(executableName) - version 1.0")
+        print("Convert Sogou SCEL dictionary to CSV with column lexicon, weight and pinyin")
+        print("\nUsage:\n\(executableName) -s scel_path [-o output_csv_path] [-t]")
+        print("\nOptions:")
+        print("-h to show usage information")
+        print("-s scel_path")
+        print("-o output_csv_path")
+        print("-t to transform from Simplified Chinese to Traditional Chinese")
     }
     
     func getOptions() {
@@ -49,7 +53,7 @@ class CommandLineKit {
         var index = 1
         var option: CommandLineOption
 
-        self.args[.transform] = "1"
+        self.args[.transform] = ""
 
         while index < count {
             option = CommandLineOption(value: args[index])

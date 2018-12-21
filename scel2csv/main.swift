@@ -23,10 +23,10 @@ if reader.load() == false {
 
 print("SCEL file: \((srcPath as NSString).lastPathComponent)")
 print("CSV file: \((destPath as NSString).lastPathComponent)")
-print("Name: \(reader.name)")
+print("\nName: \(reader.name)")
 print("Category: \(reader.category)")
 print("Description: \(reader.description)")
-print("Example:\nå\(reader.example)")
+print("Example:\n\(reader.example)")
 
 try? FileManager.default.removeItem(atPath: destPath)
 FileManager.default.createFile(atPath: destPath, contents: nil, attributes: nil)
